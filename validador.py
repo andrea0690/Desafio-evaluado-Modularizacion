@@ -1,12 +1,13 @@
 
 def validate(opciones, eleccion):
-   
-    print(eleccion,opciones)
     
     if eleccion in opciones:
         return eleccion
     else:
-        return 'Opción no válida, ingrese una de las opciones válidas: '    
+        # mejora para solicitar opcion valida obligatoria
+        while eleccion not in opciones:
+            eleccion = input('Ingrese una de las opciones validas ' + ', '.join(opciones) + ': ')
+        return eleccion    
 
 if __name__ == '__main__':
     

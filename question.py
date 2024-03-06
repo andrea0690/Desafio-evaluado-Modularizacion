@@ -18,9 +18,9 @@ def choose_q(dificultad):
     
     # escoger una pregunta
     n_elegido = random.choice(preguntas)
+    
     # eliminarla del ambiente global para no escogerla de nuevo
-    opts = [opt for opt in opciones[dificultad] if n_elegido != opt]
-    opciones[dificultad] = opts
+    opciones[dificultad] = [elem for elem in preguntas if n_elegido != elem]
     
     # escoger enunciado y alternativas mezcladas
     pregunta = {}
